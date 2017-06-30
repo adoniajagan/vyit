@@ -335,7 +335,7 @@ bot.dialog('/About\ You', [
     function (session, results) {
         var style = builder.ListStyle["button"];
         session.send("Ok! noted! '%s'", results.response);
-		saveusersubinput(session,'2','4','About\ You',results.response,'0');
+		saveusersubinput(session,'2','4','About You',results.response,'0');
         builder.Prompts.choice(session, "How comfortable would you be to work in an R&I environment?", "Very comfortable|Okay|Not comfortable", { listStyle: style });
     },
     function (session, results) {
@@ -349,7 +349,7 @@ bot.dialog('/About\ You', [
             candscore -= 10;
             score = -10;
         }
-		saveusersubinput(session,'2','4','About\ You',results.response.entity,score);
+		saveusersubinput(session,'2','4','About You',results.response.entity,score);
         var style = builder.ListStyle["button"];
     //    session.send("Ok! noted! '%s'", results.response);
         builder.Prompts.choice(session, "If the job is offered, will you be willing to relocate closer to Siruseri?", "Yes|No", { listStyle: style });
@@ -357,10 +357,12 @@ bot.dialog('/About\ You', [
     function (session, results) {
         if (results.response.entity === 'Yes') {
             candscore += 20;
+            score = 20;
         } else {
             candscore -= 20;
+            score = -20;
         }
-		saveusersubinput(session,'2','5','About\ You',results.response.entity,candscore);
+		saveusersubinput(session,'2','5','About\ You',results.response.entity,score);
         
         if (candscore > 50) {
             session.send("Based on our conversation, we assess a fit. Our HR representative will contact you to schedule for the next round of interview.", candscore);
