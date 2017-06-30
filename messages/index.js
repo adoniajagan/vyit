@@ -298,9 +298,10 @@ bot.dialog('/About\ You', [
     function (session) {
         session.send("Okay, let's chat!");
         builder.Prompts.text(session, "Could you please tell me about yourself in two sentences?");
+         session.send("jagan");
     },
     function (session, results) {
-        session.send("jagan");
+       
 		saveusersubinput(session,'2','1','About_You',results.response,score);
         analyticsService.getScore(results.response).then(score => {
             session.send("Thank your for the feedback! Your score is %s", score);
