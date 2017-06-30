@@ -249,6 +249,7 @@ function saveuserinput(session,result,resultentity){
 	}
 	
 	function saveusersubinput(session,InputID,SubInput,Input,SubInputvalue,candscore){
+        session.send(candscore);
 	   request = new sql.Request();
 	   request.query("Insert into [SalesLT].[Log] (InputID,Input,SubInput,SubInputvalue,Score,UserID) values ('"+ parseInt(InputID) +"','"+Input+"','"+ parseInt(SubInput) +"','"+SubInputvalue+"','"+parseInt(candscore)+"','"+parseInt(userid)+"')")
 	  .then(function () {
