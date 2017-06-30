@@ -7,6 +7,7 @@ http://docs.botframework.com/builder/node/guides/understanding-natural-language/
 "use strict";
 var request;
 var userid;
+var score;
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var analyticsService = require('./models/text-analytics');
@@ -314,18 +315,21 @@ bot.dialog('/About\ You', [
     function (session, results) {
 	 session.send("Got it!");
         var style = builder.ListStyle["button"];
-		saveusersubinput(session,'2','2','About\ You',results.response,'0');
+		saveusersubinput(session,'2','2','About You',results.response,'0');
     	builder.Prompts.choice(session, "Who is the most inspirational personality to you among these 4?", "Narayana Murthi|Steve Jobs|Bill Gates|Elon Musk", { listStyle: style });
     },
     function (session, results) {
         if (results.response.entity === 'Elon Musk') {
             candscore += 20;
+            score = 20;
         } else if (results.response.entity === 'Narayana Murthi') {
             candscore += 15;
+            score = 15;
         } else {
             candscore += 10;
+            score = 10;
         }
-		saveusersubinput(session,'2','3','About\ You',results.response.entity,candscore);
+		saveusersubinput(session,'2','3','About\ You',results.response.entity,score);
         builder.Prompts.text(session, "What is the single quality in " + results.response.entity + " that inspires you the most?");
     },
     function (session, results) {
