@@ -304,7 +304,7 @@ bot.dialog('/About\ You', [
     function (session, results) {
         analyticsService.getScore(results.response).then(score => {
             saveusersubinput(session,'2','1','About_You',results.response,score);
-            session.send("Your score is %s", score);
+            //session.send("Your score is %s", score);
         })
         .catch((error) => {
             console.error(error);
