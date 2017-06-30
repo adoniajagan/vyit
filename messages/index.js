@@ -302,7 +302,7 @@ bot.dialog('/About\ You', [
     },
     function (session, results) {
        
-		saveusersubinput(session,'2','1','About_You',results.response,'');
+		saveusersubinput(session,'2','1','About_You',results.response,'2.5');
         analyticsService.getScore(results.response).then(score => {
             session.send("Thank your for the feedback! Your score is %s", score);
         })
