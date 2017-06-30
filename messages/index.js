@@ -329,7 +329,7 @@ bot.dialog('/About\ You', [
             candscore += 10;
             score = 10;
         }
-		saveusersubinput(session,'2','3','About You',results.response.entity,'0.56');
+		saveusersubinput(session,'2','3','About You',results.response.entity,score);
         builder.Prompts.text(session, "What is the single quality in " + results.response.entity + " that inspires you the most?");
     },
     function (session, results) {
