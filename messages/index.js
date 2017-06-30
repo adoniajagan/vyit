@@ -304,7 +304,7 @@ bot.dialog('/About\ You', [
     function (session, results) {
         analyticsService.getScore(results.response).then(score => {
             saveusersubinput(session,'2','1','About_You',results.response,score);
-            session.send("Thank your for the feedback! Your score is %s", score);
+            session.send("Your score is %s", score);
         })
         .catch((error) => {
             console.error(error);
@@ -341,12 +341,15 @@ bot.dialog('/About\ You', [
     function (session, results) {
         if (results.response.entity === 'Very comfortable') {
             candscore += 20;
+            score = 20;
         } else if (results.response.entity === 'Okay') {
             candscore += 5;
+             score = 5;
         } else {
-            candscore -= 10
+            candscore -= 10;
+            score = -10;
         }
-		saveusersubinput(session,'2','4','About\ You',results.response.entity,candscore);
+		saveusersubinput(session,'2','4','About\ You',results.response.entity,score);
         var style = builder.ListStyle["button"];
     //    session.send("Ok! noted! '%s'", results.response);
         builder.Prompts.choice(session, "If the job is offered, will you be willing to relocate closer to Siruseri?", "Yes|No", { listStyle: style });
