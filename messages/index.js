@@ -56,110 +56,143 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .matches('<yourIntent>')... See details at http://docs.botframework.com/builder/node/guides/understanding-natural-language/
 */
 .matches('aboutcomp', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('The company is Global Mantra Innovations (GMI), located in Siruseri SIPCOT IT Park, Chennai. Our mantra is "Free Thinking".  GMI is a full life cycle Research and Innovation company focused on providing repeatable, reusable and scalable widgets.');
 })
 .matches('address', (session, args) => {
+     saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('Global Mantra Innovations, the company, is located in Siruseri SIPCOT IT Park, Chennai.');
 })
 .matches('affir', (session, args) => {
+     saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('Are there anything else you wish to know about the company? If yes, please continue. If not, type "menu"');
 })
 .matches('compcult', (session, args) => {
     session.send('Fun at work! Mantraians, our employees, are high-spirited people, who thirst for innovation and love to work as a team. Sky is the limit and we are driven by the phrase "Why not?".This is our culture.');
     if (count < 5) {
         candscore += 10
+        score = 10;
         count += 1
     };
+     saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('compdom', (session, args) => {
     session.send('Our primary domain is Healthcare. We also do a number of US federal defense projects.');
     if (count < 5) {
         candscore += 10
+         score = 10;
         count += 1
     };
+     saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('compgoal', (session, args) => {
     session.send('We are a products company! We aspire to develop a handful of globally competing tech products in cutting edge domains such as artificial intelligence, augmented reality, and block-chain technologies, by 2020.');
     if (count < 5) {
         candscore += 10
+         score = 10;
         count += 1
     };
+     saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('compprod', (session, args) => {
     session.send('Some of the products developed in our very own "Widget Factory" serve in fast-tracking the code, as security wrapper, and for transformation of data into various formats.');
     if (count < 5) {
         candscore += 10
+         score = 10;
         count += 1
     };
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('compprof', (session, args) => {
     session.send('We are a profitable company. Our revenue in 2016 was USD 150 million.');
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
 })
 .matches('compsize', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('At present, we employ about 50 professionals. We are looking to expand to about 150 techies by the end of 2017.');
 })
 .matches('compvalue', (session, args) => {
     session.send('Free thinking and Innovation are our core values. Our Dream is “Super BIG” Innovations and be “the industry standard”.');
     if (count < 5) {
-        candscore += 10
-        count += 1
+        candscore += 10;
+        count += 1;
+        score = 10;
     };
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('compweb', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('The company website is http://globalmantrai.com/index.html.');
 })
 .matches('currtech', (session, args) => {
     session.send('We are working in cutting-edge technologies like Artificial Intelligence, Blockchain, Virtual Reality, Data Science, etc.');
     if (count < 5) {
         candscore += 10
+        score =10;
         count += 1
     };
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('dresscode', (session, args) => {
     session.send('We do not have any strict dress codes. Casual office dressing is encouraged.');
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
 })
 .matches('founder', (session, args) => {
     session.send('Ravi Kunduru is the founder and CEO of Global Mantra Innovations.');
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
 })
 .matches('geog', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('Our headquarters is in Columbus, Ohio. We are also present in Maryland, Virginia, Iowa, New Mexico, Louisiana and Chennai. Soon we’ll extend to Singapore and Ireland.');
 })
 .matches('headop', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('Naresh Nagarajan is the SVP and head of operations of Global Mantra Innovations.');
 })
 .matches('howapp', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('For current openings and the procedure to apply, please visit http://globalmantrai.com/Careers.html.');
 })
 .matches('idealemp', (session, args) => {
     session.send('An ideal employee is one who is brave to think "Super BIG" and open to face challenges.');
     if (count < 5) {
-        candscore += 10
-        count += 1
+        candscore += 10;
+        score = 10;
+        count += 1;
     };
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('pubpriv', (session, args) => {
     session.send('Global Mantra Innovations is a privately-owned company!');
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
 })
 .matches('services', (session, args) => {
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,'0');
     session.send('We do services. Center for Medicare and Medicaid is one of the clients for whom we do services.');
 })
 .matches('scope', (session, args) => {
     session.send('We have a vibrant atmosphere and we provide a great landscape for you to be creative and explore cutting-edge technologies.');
     if (count < 5) {
-        candscore += 10
-        count += 1
+        candscore += 10;
+        score = 10;
+        count += 1;
     };
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('whenfound', (session, args) => {
     session.send('The company was founded in 1996 in Chennai.');
     candscore += 5;
+    score = 5;
+    saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .matches('worktime', (session, args) => {
     session.send('We encourage Mantraians to be present between 10 am to 7 pm, when majority of team discussions and meetings take place. Work-from-home is allowed when the need arises.');
     if (count < 5) {
         candscore -= 10
-        count += 1
+        count += 1;
+        score = -10;
     };
+     saveusersubinput(session,'1','1','AboutGMI',session.message.text,score);
 })
 .onDefault((session) => {
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
