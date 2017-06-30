@@ -249,7 +249,7 @@ function saveuserinput(session,result,resultentity){
 	}
 	
 	function saveusersubinput(session,InputID,SubInput,Input,SubInputvalue,candscore){
-        session.send(candscore);
+       
 	   request = new sql.Request();
 	   request.query("Insert into [SalesLT].[Log] (InputID,Input,SubInput,SubInputvalue,Score,UserID) values ('"+ parseInt(InputID) +"','"+Input+"','"+ parseInt(SubInput) +"','"+SubInputvalue+"','"+parseInt(candscore)+"','"+parseInt(userid)+"')")
 	  .then(function () {
@@ -300,6 +300,7 @@ bot.dialog('/About\ You', [
         builder.Prompts.text(session, "Could you please tell me about yourself in two sentences?");
     },
     function (session, results) {
+        session.send(score);
 		saveusersubinput(session,'2','1','About_You',results.response,score);
         analyticsService.getScore(results.response).then(score => {
             session.send("Thank your for the feedback! Your score is %s", score);
